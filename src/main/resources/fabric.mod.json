@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "auto-login-mod",
 	"version": "2.1.2",
-	"name": "Auto Login Mod (Pro Edition)",
+	"name": "Cytech Auto Login",
 	"description": "Client-side automatic authentication for servers using /login or /register, with prompt detection, per-server credentials, encrypted storage, and optional remembered device unlock.",
 	"authors": [
 		"Cytech Team",
@@ -10,8 +10,8 @@
 	],
 	"contact": {
 		"homepage": "https://github.com/CyoriaSMP-Team",
-		"sources": "https://github.com/CyoriaSMP-Team/Auto-Login-Mod",
-		"issues": "https://github.com/CyoriaSMP-Team/Auto-Login-Mod/issues"
+		"sources": "https://github.com/CyoriaSMP-Team/Cytech-Auto-Login",
+		"issues": "https://github.com/CyoriaSMP-Team/Cytech-Auto-Login/issues"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/auto-login-mod/icon.png",

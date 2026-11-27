@@ -1,12 +1,12 @@
 <!-- CYTECH_README_REFRESH:START -->
 <div align="center">
-<a href="https://github.com/CyoriaSMP-Team/Auto-Login-Mod"><img width="100%" alt="Auto-Login Mod banner" src="https://capsule-render.vercel.app/api?type=waving&color=0:122017,100:22C55E&height=210&section=header&text=Auto-Login%20Mod&fontSize=40&fontColor=ffffff&fontAlignY=36&desc=Prompt-aware%20Minecraft%20authentication%20helper&descAlignY=59&descSize=16"></a>
+<a href="https://github.com/CyoriaSMP-Team/Cytech-Auto-Login"><img width="100%" alt="Cytech Auto Login banner" src="https://capsule-render.vercel.app/api?type=waving&color=0:122017,100:22C55E&height=210&section=header&text=Auto-Login%20Mod&fontSize=40&fontColor=ffffff&fontAlignY=36&desc=Prompt-aware%20Minecraft%20authentication%20helper&descAlignY=59&descSize=16"></a>
 
-<p><img src="src/main/resources/assets/auto-login-mod/icon.png" alt="Auto-Login-Mod logo" width="136" /></p>
+<p><img src="src/main/resources/assets/auto-login-mod/icon.png" alt="Cytech Auto Login logo" width="136" /></p>
 
 <img alt="Project: Minecraft Mod" src="https://img.shields.io/badge/PROJECT-Minecraft%20Mod-22C55E?style=flat-square&labelColor=122017"> <img alt="Stack: Fabric · Java" src="https://img.shields.io/badge/STACK-Fabric%20%C2%B7%20Java-22C55E?style=flat-square&labelColor=122017">
 
-<a href="https://github.com/CyoriaSMP-Team/Auto-Login-Mod">Source</a> · <a href="https://github.com/CyoriaSMP-Team/Auto-Login-Mod/issues">Issues</a> · <a href="https://github.com/CyoriaSMP-Team/Auto-Login-Mod/releases">Releases</a>
+<a href="https://github.com/CyoriaSMP-Team/Cytech-Auto-Login">Source</a> · <a href="https://github.com/CyoriaSMP-Team/Cytech-Auto-Login/issues">Issues</a> · <a href="https://github.com/CyoriaSMP-Team/Cytech-Auto-Login/releases">Releases</a>
 
 </div>
 <!-- CYTECH_README_REFRESH:END -->
@@ -78,11 +78,11 @@ Created by CyoriaSMP Team / namnarak
 
 ## Star History
 
-<a href="https://github.com/CyoriaSMP-Team/Auto-Login-Mod/stargazers">
+<a href="https://github.com/CyoriaSMP-Team/Cytech-Auto-Login/stargazers">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CyoriaSMP-Team/Auto-Login-Mod/refs/heads/main/assets/star-history-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CyoriaSMP-Team/Auto-Login-Mod/refs/heads/main/assets/star-history-light.svg" />
-    <img alt="Star history for CyoriaSMP-Team/Auto-Login-Mod" src="https://raw.githubusercontent.com/CyoriaSMP-Team/Auto-Login-Mod/refs/heads/main/assets/star-history-light.svg" width="1100" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CyoriaSMP-Team/Cytech-Auto-Login/refs/heads/main/assets/star-history-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CyoriaSMP-Team/Cytech-Auto-Login/refs/heads/main/assets/star-history-light.svg" />
+    <img alt="Star history for CyoriaSMP-Team/Cytech-Auto-Login" src="https://raw.githubusercontent.com/CyoriaSMP-Team/Cytech-Auto-Login/refs/heads/main/assets/star-history-light.svg" width="1100" />
   </picture>
 </a>
 
