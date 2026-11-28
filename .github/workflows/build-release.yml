@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Existing stable release tag to attach the build to (for example v2.1.3)"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -34,17 +39,20 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Verify tagged release version
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.release_tag != '')
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
         shell: bash
         run: |
           set -euo pipefail
-          expected="${GITHUB_REF_NAME#v}"
+          tag="${RELEASE_TAG:-$GITHUB_REF_NAME}"
+          expected="${tag#v}"
           properties_version="$(sed -n 's/^mod_version=//p' gradle.properties)"
           build_version="$(sed -n 's/^version = "\([^"]*\)".*/\1/p' build.gradle)"
           metadata_version="$(python3 -c 'import json; print(json.load(open("src/main/resources/fabric.mod.json"))["version"])')"
           for actual in "$properties_version" "$build_version" "$metadata_version"; do
             if [[ "$actual" != "$expected" ]]; then
-              echo "::error::Git tag $GITHUB_REF_NAME does not match project version ($properties_version / $build_version / $metadata_version)"
+              echo "::error::Release tag $tag does not match project version ($properties_version / $build_version / $metadata_version)"
               exit 1
             fi
           done
@@ -98,18 +106,24 @@ jobs:
           fi
 
       - name: Publish tagged stable release
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+        if: (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')) || (github.event_name == 'workflow_dispatch' && inputs.release_tag != '')
         env:
           GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
         shell: bash
         run: |
           set -euo pipefail
-          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
-            echo "::error::Release $GITHUB_REF_NAME already exists; refusing to overwrite it."
-            exit 1
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release $RELEASE_TAG already exists; attaching the verified build assets."
+            gh release upload "$RELEASE_TAG" dist/*.jar dist/SHA256SUMS --clobber
+            gh release edit "$RELEASE_TAG" \
+              --title "Auto-Login Mod $RELEASE_TAG" \
+              --notes "Stable release $RELEASE_TAG. Built and verified by GitHub Actions." \
+              --latest
+          else
+            gh release create "$RELEASE_TAG" dist/*.jar dist/SHA256SUMS \
+              --verify-tag \
+              --title "Auto-Login Mod $RELEASE_TAG" \
+              --generate-notes \
+              --latest
           fi
-          gh release create "$GITHUB_REF_NAME" dist/*.jar dist/SHA256SUMS \
-            --verify-tag \
-            --title "Auto-Login Mod $GITHUB_REF_NAME" \
-            --generate-notes \
-            --latest
