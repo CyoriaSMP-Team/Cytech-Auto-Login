@@ -3,7 +3,7 @@
   "id": "auto-login-mod",
   "version": "2.1.3",
   "name": "Cytech Auto Login",
-  "description": "Client-side automatic authentication for Minecraft servers using /login or /register, with prompt detection, per-server credentials, encrypted storage, and optional remembered device unlock.",
+  "description": "Client-side Fabric mod that detects server authentication prompts and automatically sends /login or /register using encrypted per-server credentials.",
   "authors": [
     "Cytech Team",
     "namnarak"
