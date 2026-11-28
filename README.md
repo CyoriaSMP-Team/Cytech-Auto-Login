@@ -21,6 +21,7 @@ A client-side Fabric utility that automatically authenticates you on Minecraft s
 | --- | --- |
 | Project type | Minecraft client-side mod |
 | Mod ID | `auto-login-mod` |
+| Project version | `2.1.3` |
 | Minecraft | `1.21.11` |
 | Mod loader | Fabric |
 | Fabric Loader | `0.19.3+` |
