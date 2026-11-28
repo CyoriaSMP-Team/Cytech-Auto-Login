@@ -15,6 +15,23 @@
 
 A client-side Fabric utility that automatically authenticates you on Minecraft servers using `/login` or `/register`.
 
+## Metadata & compatibility
+
+| Field | Value |
+| --- | --- |
+| Project type | Minecraft client-side mod |
+| Mod ID | `auto-login-mod` |
+| Minecraft | `1.21.11` |
+| Mod loader | Fabric |
+| Fabric Loader | `0.19.3+` |
+| Java | `21+` |
+| Required dependency | Fabric API |
+| Modrinth | [Cytech Auto Login](https://modrinth.com/project/cytechautologin) |
+
+The authoritative loader metadata is stored in `src/main/resources/fabric.mod.json` and is packaged at the root of the mod JAR. The namespaced `custom.cytech_auto_login:metadata` object in that file exposes additional project, compatibility, capability, classification, and security information for external tools. Fabric Loader ignores this custom object; tools that want to consume it must read it explicitly.
+
+**Distribution note:** the compatibility values above describe the current source configuration. They do not imply that a release has been uploaded or approved on Modrinth.
+
 ## How it works
 
 1. Configure a global password or a per-server password once.
